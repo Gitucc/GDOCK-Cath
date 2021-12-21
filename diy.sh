@@ -2,7 +2,7 @@ echo '修改机器名称'
 sed -i 's/OpenWrt/G-DOCK/g' package/base-files/files/bin/config_generate
 
 echo '修改网关地址'
-sed -i 's/192.168.1.1/192.168.5.1/g' package/base-files/files/bin/config_generate
+sed -i 's/192.168.1.1/192.168.1.1/g' package/base-files/files/bin/config_generate
 
 echo '修改时区'
 sed -i "s/'UTC'/'CST-8'\n        set system.@system[-1].zonename='Asia\/Shanghai'/g" package/base-files/files/bin/config_generate
@@ -28,13 +28,14 @@ rm -rf package/base-files/files/etc/banner
 cp -f ../banner package/base-files/files/etc/
 
 echo '下载ServerChan'
-git clone https://github.com/tty228/luci-app-serverchan ../diy/luci-app-serverchan
+#git clone https://github.com/tty228/luci-app-serverchan ../diy/luci-app-serverchan
 
 echo '下载AdGuard Home'
 #svn co https://github.com/Lienol/openwrt/trunk/package/diy/luci-app-adguardhome ../diy/luci-app-adguardhome 
-svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-adguardhome ../diy/luci-app-adguardhome
-svn co https://github.com/kenzok8/openwrt-packages/trunk/adguardhome ../diy/adguardhome
-
+#svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-adguardhome ../diy/luci-app-adguardhome
+#svn co https://github.com/kenzok8/openwrt-packages/trunk/adguardhome ../diy/adguardhome
+svn co https://github.com/kenzok8/openwrt-packages ../diy/kenzo
+svn co https://github.com/kenzok8/small ../diy/small
 #echo 'JD script'
 #git clone https://github.com/Cathgao/luci-app-jd-dailybonus ../diy/luci-app-jd-dailybonus
 
